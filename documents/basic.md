@@ -37,3 +37,23 @@ both framwwork (backend , frontend )
 file based routing, ssr(ststic site generation) , ssg(ststic site rendering)
 
 
+
+
+
+the bat and ball cost 1.10
+let ball be x and bat be y 
+x+y=1.10
+x=1.10-y...............(i)
+y=1+x..........ii
+
+so from 1st eqn 
+x=1.10-1-x
+
+
+
+x=0.5......ball
+
+y=1+0,5
+
+ie bat=1.05
+

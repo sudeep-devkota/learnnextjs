@@ -42,6 +42,8 @@ layout helps to preserve state eg
 
 
 
+
+
 Dynamic routes: [id].tsx
 # routes 
 # (1) nested routes 
@@ -49,10 +51,9 @@ Dynamic routes: [id].tsx
 >/blog(segment)
 >[slug](leaf segment)
 
-
-
-
-
+# use async await to wnwrap params 
+async function .....
+const {category }=await params;
 
 
 Linking pages with <Link />
@@ -61,14 +62,52 @@ Linking pages with <Link />
 
 ✍️ Build:
 
+
+
+
+
+
+
+
+
+
 A simple 3-page portfolio with internal links
 
 ✅ Day 3: Static Site Generation (SSG) & getStaticProps
 Fetch API data at build time
 
-Use getStaticProps, getStaticPaths
+ Use getStaticProps, getStaticPaths
+# getstaticprops = 
+  export async function getStaticProps() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await res.json();
 
-Revalidation (revalidate)
+
+
+
+
+  return {
+    props: {
+      # posts, // passed to your page component as props
+    },
+
+    # getstaticpath
+    the main things and have to be as 
+   per the assumption and caould be the  
+    
+
+
+
+
+    
+
+
+
+
+# Revalidation (revalidate)
+# revalidate = Incremental Static Regeneration (ISR)
+revalidate: 10: the page will automatically look for the page after the client visit after 10s
+It allows pages to be updated after the site has been built.
 
 ✍️ Build:
 
@@ -78,10 +117,29 @@ Static blog homepage that lists posts from a JSON or API
 getServerSideProps explained
 
 Difference between SSR and SSG
+# SSR  WE USE (getServerSideProps)
+SSR means the page is generated on the server every time a user requests it.
+User visits the page.
+
+Next.js fetches the data on the server.
+
+It generates the HTML using that data.
+
+Then sends the full page to the browser.
+# You need real-time or always-updated data (e.g., dashboards, news feeds).
+
+# You need to fetch data that’s user-specific (like using cookies or session).
+
+# SSG( static  site generation)
+# we use get static props 
+When users visit the site, they get a super-fast static page.
+You want fast loading and great SEO.
 
 Real-time data fetching
 
 ✍️ Build:
+
+
 
 A page that shows real-time user data from an API
 
@@ -96,12 +154,12 @@ Global styles, Tailwind setup
 
 A navbar, footer, and reusable card component
 
-✅ Day 6: API Routes (Backend with Next.js)
-Create APIs in pages/api/
+    ✅ Day 6: API Routes (Backend with Next.js)
+    Create APIs in app/api/
 
-RESTful routes
+    RESTful routes
 
-Send JSON responses
+    Send JSON responses
 
 ✍️ Build:
 
@@ -112,7 +170,56 @@ Handling form input with useState/useForm
 
 Submitting to backend routes
 
-Toasts and form validations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ✍️ Build:
 
